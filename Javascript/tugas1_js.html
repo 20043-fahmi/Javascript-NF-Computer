@@ -1,0 +1,71 @@
+<script language="javascript">
+
+    var nama = "Ridwan";
+    var jabatan = "Manajer";
+    var status = "Menikah";
+    
+    if (jabatan == 'Manajer') {
+        GP = 15000000;
+        }
+        else if (jabatan == 'Asisten Manajer') {
+            GP = 10000000;
+        }
+        else if (jabatan == 'Staf') {
+            GP = 5000000;
+        }   
+        else {
+            GP = 0;
+        }
+
+    let tunJabatan = 0.15 * GP;
+    let bpjs = 0.1 * GP;
+
+
+    tunjKel = (status == 'Menikah') ? 0.2 * GP : 0;
+
+    totalGaji = GP +  tunJabatan + bpjs + tunjKel;
+
+    document.write(
+        
+    '<div style="width: 30%; margin: auto; padding:10 50 50 50; margin-top: 4em; border:3px solid black;">' +
+    '<h2 align="center">Data Pegawai</h2>' +
+    '<h4>Nama : ' + nama + '</h4>' +
+    '<h4>Jabatan : ' + jabatan + '</h4>' +
+    '<h4>Status : ' + status + '</h4>' +
+    '<table border="1" align="center" cellpadding="2" width="100%">' +
+        
+    '<thead>' +
+        '<tr style="background-color: #AAC4FF;">' +
+            '<th>Data Gaji</th>' +
+            '<th>Jumlah</th>' +
+        '</tr>' +
+    '</thead>' +
+
+    '<tbody>' +
+        '<tr>' +
+            '<td>Gaji Pokok</td>' +
+            '<td align="right">Rp. ' + GP + '</td>' +
+        '</tr>' +
+        '<tr>' +
+            '<td>Tunjangan Jabatan</td>' +
+            '<td align="right">Rp. ' + tunJabatan + '</td>' +
+        '</tr>' +
+        '<tr>' +
+            '<td>BPJS</td>' +
+            '<td align="right">Rp. ' + bpjs + '</td>' +
+        '</tr>' +
+        '<tr>' +
+            '<td>Tunjangan Keluarga</td>' +
+            '<td align="right">Rp. ' + tunjKel + '</td>' +
+        '</tr>' +
+    '</tbody>' +
+
+    '<tfoot>' +
+        '<tr style="background-color: #FFDE00;">' +
+            '<th>Total Gaji</th>' +
+            '<th align="right">Rp. ' + totalGaji + '</th>' +
+        '</tr>' +
+    '</tfoot>' +
+
+    '</table> </div>');
+</script>
