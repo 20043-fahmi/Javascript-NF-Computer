@@ -39,7 +39,7 @@ for(m of mahasiswa) {
                 for(m of mahasiswa) { 
                     //set kelulusan
                     let ket = ( m.nilai >= 60) ? "Lulus" : "Gagal";
-                    let collor = ( m.nilai >= 60) ? "Lulus" : "Gagal";
+                    let color = ( m.nilai >= 60) ? "#7FFF00" : "#F08080";
                     //set grade A - E (if multi kondisi)
                     // A = 85 - 100, B = 75 - < 85 dst 
 
@@ -73,7 +73,7 @@ for(m of mahasiswa) {
                                 predikat= "Buruk"
                         }
                     //set warna-warni baris ganjil & genap
-                    document.write(`<tr bgcolor="">
+                    document.write(`<tr bgcolor="${color}">
                         <td>${no++}</td>
                         <td>${m.nama}</td>
                         <td>${m.nilai}</td>
