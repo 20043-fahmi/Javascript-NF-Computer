@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container-Resi">
+        <table class="table table-striped table-hover mt-5">
+              <thead bgcolor="">
+                <tr>
+                    <td>#</td>
+                    <td>lokasi</td>
+                    <td>skala</td>
+                    <td>dampak</td>
+                </tr>
+                </tr>
+              </thead>
+              <tbody id="isi">
+                <!-- Body -->
+              </tbody>     
+        </table>
+      </div>
+    <script>
+    
+        class gempa{
+            constructor(lokasi, skala){
+                this.lokasi = lokasi;
+                this.skala = skala;
+            }
+        
+            getdampak(){
+                if(this.skala >= 6) this.dampak = 'Bangunan roboh dan berpotensi Tsunami';
+                else if(this.skala > 4 && this.skala <= 6) this.dampak = 'Bangunan roboh';
+                else if(this.skala > 2 && this.skala <= 4) this.dampak = 'Bangunan retak';
+                else if(this.skala < 2) this.dampak = 'Tidak terasa';
+                return this.dampak;
+            }
+            
+            increment() {
+                for(i = 1; i <= 10; i++)
+                return i;
+            }
+
+            mencetak(){
+                let no=1;
+                document.getElementById('isi').innerHTML =
+                `<tr>
+                    <td>${no++}</td>
+                    <td>${this.lokasi}</td>
+                    <td>${this.skala}</td>
+                    <td>${this.getdampak()}</td>
+                </tr>
+                `
+            }
+        }
+    
+        
+        //-------membuat object-----
+        G1 = new gempa('Bandung',1);
+        G2 = new gempa('Lembang',2);
+        G3 = new gempa('Jakarta',3);
+        G4 = new gempa('Medan',4);
+        G5 = new gempa('Bogor',5);
+        G6 = new gempa('Bali',6);
+        G7 = new gempa('Solo',7);
+        G8 = new gempa('Sumedang',8);
+        G9 = new gempa('Surakarta',9);
+        G10 = new gempa('Chimahi',10);
+        
+        
+        G1.mencetak();
+        G2.mencetak();
+        G3.mencetak();
+        G4.mencetak();
+        G5.mencetak();
+        G6.mencetak();
+        G7.mencetak();
+        G8.mencetak();
+        G9.mencetak();
+        G10.mencetak();
+
+
+
+    </script>
+    </body>
+</html>
